@@ -5,8 +5,19 @@ function setup() {
 }
 
 function draw() {
-  stroke(20);
-  background(0);
-  fill("#f1f1f1");
+
+  noStroke();
+  
+  // change color when pressed down.
+  if (mouseIsPressed) {
+    console.log("pressed")
+    background("#f1f1f1")
+    fill(0);
+
+  } else {
+    background(0);
+    fill("#f1f1f1");
+  }
+
   ellipse(mouseX, mouseY, 100, 100);
 }
