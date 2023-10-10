@@ -1,5 +1,6 @@
 // fetch random image from API Design Museum Gent 
 // https://data.designmuseumgent.be/random-image?limit=1
+let im;
 
 async function fetchImage(PURL) {
     const _res = await fetch(PURL)
@@ -7,12 +8,24 @@ async function fetchImage(PURL) {
     return data
 }
 
+function preload() {
+    data = fetchImage("https://data.designmuseumgent.be/id/random-image?limit=1").then(
+        data=>im=loadImage(data[0].replace("full/full/0/default.jpg","full/,500/0/default.jpg"))
+
+    )
+      
+}
+
 function setup() {
-    createCanvas(windowWidth, windowHeight)
-    fetchImage("https://data.designmuseumgent.be/id/random-image?limit=1").then(
-    data=>img=loadImage(data[0])
-)}
+    createCanvas(windowWidth, windowHeight)    
+    imageMode(CENTER);
+}
 
 function draw() {
-    image(img, 0, 0)
+    if(im) {
+        //console.log(im);
+        //im.toString().replace("full/full/0/default.jpg","full/500,/0/default.jpg")
+        image(im, windowWidth/2, windowHeight/2);
+    }
+    
 }
