@@ -1,4 +1,4 @@
-//import { fetchImage } from "../../utils/image_utils";
+import { fetchImage } from "../../utils/image_utils";
 
 
 // P5 SCRIPT THAT RASTERIZES IMAGES. 

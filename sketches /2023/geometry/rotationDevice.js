@@ -21,13 +21,13 @@ function draw() {
     rectMode(CENTER); 
     translate(windowWidth/2, windowHeight/2);
 
-    spinningLine(1); // first line
-    spinningLine(0.33) // second line
+    spinningLine(frameCount); // first line
+    spinningLine(-frameCount); // second line
 }
 
 // GEOMATRIES 
 function spinningLine(speed) {
-    rotate(radians(frameCount)*speed)
+    rotate(radians(speed));
     fill(255, 255, 255, 0.8);
     rect(0, 0, 20, windowWidth*0.33);
 }
