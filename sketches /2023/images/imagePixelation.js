@@ -28,9 +28,6 @@ function draw() {
     let tileX = 200; 
     let tileY = tileX;
 
-    let tileW= windowWidth/tileX
-    let tileH= windowHeight/tileY
-
 
     // load this part before the image is loaded
     if (!im) {
@@ -39,6 +36,9 @@ function draw() {
 
     // only load this part once the image is loaded 
     if(im) {
+        
+        let tileW= im.width/tileX
+        let tileH= im.height/tileY
 
         push()
 
