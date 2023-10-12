@@ -25,7 +25,7 @@ function draw() {
     background("#f1f1f1");
     background(0);
 
-    let tileX = 200; 
+    let tileX = 100; 
     let tileY = tileX;
 
     let tileW= windowWidth/tileX
@@ -40,10 +40,14 @@ function draw() {
     // only load this part once the image is loaded 
     if(im) {
 
-        push()
+    
+        //push()
 
         scale(0.5)
         translate(windowWidth/2, windowHeight/2)
+
+        let wave = map(sin(radians(frameCount)*5), -1, 1, 0, 300)
+        let wave2 = map(sin(radians(frameCount)), -1, 1, 0, 1)
     
 
         for (let x= 0; x < tileX; x++) {
@@ -56,13 +60,13 @@ function draw() {
                 let b = brightness(color) // 
                 fill(b)
 
-                ellipse(x*tileW, y*tileH, tileW, tileH); // ellipse
+                ellipse(x*tileW*wave2, y*tileH, tileW *wave, tileH); // ellipse
             
 
             }
         }
 
-        pop()
+        //pop()
 
     }
 
