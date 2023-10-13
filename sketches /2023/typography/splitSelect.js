@@ -21,7 +21,6 @@ function draw(){
 
     background(0)
 
-
     let tileW = windowWidth / split.length
 
     let red = color("pink") 

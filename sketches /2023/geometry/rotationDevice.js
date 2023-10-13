@@ -1,7 +1,7 @@
 // different bodies that rotate. 
 
 function setup() {
-    createCanvas(windowWidth, windowHeight)
+    createCanvas(windowWidth, windowHeight, WEBGL)
     colorMode(RGB, 255, 255, 255, 1);
 
 }
