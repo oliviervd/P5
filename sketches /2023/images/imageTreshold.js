@@ -23,9 +23,7 @@ function draw() {
     let tileX = 100; 
     let tileY = tileX;
 
-    let tileW = windowWidth/tileX;
-    let tileH = windowHeight/tileY;
-
+    
     push();
     scale(0.5);
     translate(windowWidth/2, windowHeight/2)
@@ -34,6 +32,9 @@ function draw() {
 
     // wait for image to be loaded (avoid errors)
     if (im){
+        // set matrix based on media dimensions
+        let tileW = im.width/tileX; 
+        let tileH = im.height/tileY;
 
         for (let x = 0; x < tileX; x++) {
             for (let y = 0; y < tileY; y++) {
