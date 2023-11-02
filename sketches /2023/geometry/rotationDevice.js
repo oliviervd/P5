@@ -1,7 +1,7 @@
 // different bodies that rotate. 
 
 function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL)
+    createCanvas(windowWidth, windowHeight)
     colorMode(RGB, 255, 255, 255, 1);
 
 }
@@ -25,7 +25,7 @@ function draw() {
     spinningLine(-frameCount); // second line
 }
 
-// GEOMATRIES 
+// GEOMETRIES 
 function spinningLine(speed) {
     rotate(radians(speed));
     fill(255, 255, 255, 0.8);
